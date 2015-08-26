@@ -1,10 +1,10 @@
-baseurl: "/course-template"             # The subpath of your site. Use "" if you're hosting a blog at the root level.
+baseurl: "/main"             # The subpath of your site. Use "" if you're hosting a blog at the root level.
 url: "http://mbmosman.github.io"  # the base hostname & protocol for your site
 
-title: "My Course"
+title: "JavaScript"
 
-course_full_title: "My Longer Course Title"
-course_number: CCIS XXXX
+course_full_title: "JavaScript"
+course_number: CCIS 2591
 semester: Fall 2015
 
 gems:
