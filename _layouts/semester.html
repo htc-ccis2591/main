@@ -7,7 +7,7 @@ layout: page
   <h1 class="header-bar">Session {{ forloop.index }}</h1>
   <div class="text-center">
     {% for lecture in session.lectures %}
-    <p>{{ lecture.title }}:
+    <p>{{ lecture.title }}{% if lecture.slides_url or lecture.notes_url%}:{% endif %}
       {% if lecture.slides_url %}
       <a href="{{ lecture.slides_url | prepend: site.baseurl }}">Slides</a>
       {% endif %}
@@ -19,23 +19,37 @@ layout: page
       {% endif %}
     </p>
     {% endfor %}
+
     {% for lab in session.labs %}
     <p>Lab: <a href="{{ lab.url }}" target="_blank"> {{ lab.title }} </a>
       {% if lab.worksheet_url %}
       (<a href="{{ lab.worksheet_url | prepend: site.baseurl }}">Lab Worksheet</a>)
       {% endif %}
     </p>
+    {% endfor %}
+
+    {% for item in session.readings %}
+    <p>
+      Read:
+      {% if item.url %}
+      <a href="{{ session.practice_url | prepend: site.baseurl }}">{{ item.title }}</a>
+      {% else %}
+      {{ item.title }}
+      {% endif %}
+    </p>
+    {% endfor %}
+
     {% if session.practice_url %}
     <p>
-      <a href="{{ session.practice_url | prepend: site.baseurl }}">Practice Problems</a>
+      <a href="{{ session.practice_url | prepend: site.baseurl }}">Homework Assignment</a>
     </p>
     {% endif %}
+
     {% if session.additional_url %}
     <p>
       <a href="{{ session.additional_url | prepend: site.baseurl }}">Additional Resources</a>
     </p>
     {% endif %}
-    {% endfor %}
   </div>
 </section>
 {% endfor %}
