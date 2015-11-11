@@ -22,3 +22,7 @@ Thumbs.db
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
+
+# IDE Files
+##############
+.idea
