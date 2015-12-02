@@ -21,10 +21,8 @@ layout: page
     {% endfor %}
 
     {% for lab in session.labs %}
-    <p>Lab: <a href="{{ lab.url }}" target="_blank"> {{ lab.title }} </a>
-      {% if lab.worksheet_url %}
-      (<a href="{{ lab.worksheet_url | prepend: site.baseurl }}">Lab Worksheet</a>)
-      {% endif %}
+    <p>
+      <a href="{{ lab.url | prepend: site.baseurl }}">In-class Assignment</a>
     </p>
     {% endfor %}
 
